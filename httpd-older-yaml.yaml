@@ -11,18 +11,20 @@ spec:
   selector:
     matchLabels:
       app: httpd-yaml-deployment
-  strategy: 
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 10%
-      maxSurge: 10%  
   template:
     metadata:
       labels:
         app: httpd-yaml-deployment
     spec:
       containers:
-      - image: httpd:2.4
-        name: httpd    
+      - image: httpd
+        name: httpd         
+        command: ["/bin/bash","-c"]
+        args: ["sleep 1 ; exit 1"]       
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1   
     
 
