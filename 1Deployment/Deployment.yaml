@@ -23,7 +23,7 @@ spec:
         app: mohit-yaml-mealie
     spec:
       containers:
-      - image: ghcr.io/mealie-recipes/mealie:V3.10.1
+      - image: ghcr.io/mealie-recipes/mealie:V3.10.2
         name: mohit-yaml-mealie       
         ports: 
           - containerPort: 9000
